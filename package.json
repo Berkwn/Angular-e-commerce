@@ -11,8 +11,9 @@
     "@angular/forms": "~20.3.0",
     "@angular/platform-browser": "~20.3.0",
     "@angular/router": "~20.3.0",
-    "rxjs": "~7.8.0",
-    "zone.js": "~0.15.0"
+    "flexi-grid": "^20.0.9",
+    "flexi-toast": "^20.0.4",
+    "rxjs": "~7.8.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "~20.3.0",

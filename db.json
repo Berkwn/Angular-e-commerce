@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "name": "ÜRÜN12",
+      "price": 100,
+      "stock": 100,
+      "imageUrl": "asdasdadsad",
+      "id": "5cf5"
+    }
+  ]
+}
