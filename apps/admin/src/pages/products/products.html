@@ -1,41 +1,105 @@
-<app-blank pageTitle="Ürünler" [breadcrumbs]="[{
-    title: 'Ürünler',
-    url: '/products',
-    icon: 'deployed_code'
-}]"></app-blank>
+<app-blank
+  pageTitle="Ürünler"
+  [breadcrumbs]="[
+    {
+      title: 'Ürünler',
+      url: '/products',
+      icon: 'deployed_code'
+    }
+  ]"
+></app-blank>
 
+<flexi-grid
+  [data]="data()"
+  [loading]="loading()"
+  [showCaption]="true"
+  captionTitle="Ürün Listesi"
+  [showExportExcelBtn]="true"
+  exportExcelFileName="Products"
+>
+  <!-- Üst başlıkta buton -->
+  <ng-template flexiGridCaptionCommandTemplate>
+    <flexi-button
+      btnColor="primary"
+      btnIcon="add"
+      flexiTooltip
+      routerLink="/products/create"
+      title="Yeni Ürün Ekle"
+    >
+    </flexi-button>
+  </ng-template>
 
-<flexi-grid [data]="data()"
-[loading]="loading()"
-[showCaption]="true" captionTitle="Ürün Listesi"
-[showExportExcelBtn]="true"
-exportExcelFileName="Products">
+  <!-- Ürün ID -->
+  <flexi-grid-column field="id" title="ID" filterType="text"></flexi-grid-column>
 
+  <!-- Ürün Adı -->
+  <flexi-grid-column field="name" title="Ürün Adı" filterType="text"></flexi-grid-column>
 
-<ng-template flexiGridCaptionCommandTemplate >
-  
-<flexi-button btnColor="primary" btnIcon="add" flexiTooltip routerLink="/products/create">
-</flexi-button>
-</ng-template>
-  <flexi-grid-column field="name" title="Ürün Adı">
+  <!-- Ürün Görseli -->
+  <flexi-grid-column
+    
+    title="Ürün Görseli"
+    [filterable]="false"
+    textAlign="center"
+  >
     <ng-template let-item="item">
-      <img [src]="item.imageUrl" width="50" height="50"/>
+    <img 
+  [src]="item.imageUrl"
+  width="60"
+  height="60"
+/>
     </ng-template>
   </flexi-grid-column>
-  <flexi-grid-column field="Id"  title="Id" filterType="select" ></flexi-grid-column>
 
-  <flexi-grid-column field="categoryName" title="Kategori Adı" filterType="select" [filterData]="categoryFilter()"></flexi-grid-column>
-  <flexi-grid-column field="categoryId" title="Kategori Id" textAlign="right" width="100px"></flexi-grid-column>
-  <flexi-grid-column field="imageUrl" title="Ürün Resmi" [filterable]="false" textAlign="center" filterType="text"></flexi-grid-column>
-  <flexi-grid-column field="price" title="Fiyat" filterType="number" textAlign="right" format="c" width="150px"></flexi-grid-column> 
-  <flexi-grid-column field="stock" title="stok" filterType="number" textAlign="right" width="150px"></flexi-grid-column>
+  <!-- Kategori -->
+  <flexi-grid-column
+    field="categoryName"
+    title="Kategori Adı"
+    filterType="text"
+ 
+  ></flexi-grid-column>
 
- <ng-template flexiGridColumnCommandTemplate let-item>
-    <flexi-button routerLink="/products/edit/{{item.id}}" btnIcon="edit" btnColor="info" title="Düzenle">
-    </flexi-button>
-    <flexi-button (click)="deleteProduct(item.id)" btnIcon="delete" btnColor="danger" title="Sil">
-    </flexi-button>
- </ng-template>
-   
+  <!-- Kategori ID -->
+  <flexi-grid-column
+    field="categoryId"
+    title="Kategori ID"
+    textAlign="right"
+    width="100px"
+  ></flexi-grid-column>
 
+  <!-- Fiyat -->
+  <flexi-grid-column
+    field="price"
+    title="Fiyat"
+    filterType="number"
+    textAlign="right"
+    format="c"
+    width="150px"
+  ></flexi-grid-column>
+
+  <!-- Stok -->
+  <flexi-grid-column
+    field="stock"
+    title="Stok"
+    filterType="number"
+    textAlign="right"
+    width="150px"
+  ></flexi-grid-column>
+
+  <!-- Komut butonları -->
+  <ng-template flexiGridColumnCommandTemplate let-item>
+    <flexi-button
+      [routerLink]="'/products/edit/' + item.id"
+      btnIcon="edit"
+      btnColor="info"
+      title="Düzenle"
+    ></flexi-button>
+
+    <flexi-button
+      (click)="deleteProduct(item.id)"
+      btnIcon="delete"
+      btnColor="danger"
+      title="Sil"
+    ></flexi-button>
+  </ng-template>
 </flexi-grid>

@@ -1,11 +1,85 @@
 {
   "products": [
     {
-      "name": "ÜRÜN12",
-      "price": 100,
-      "stock": 100,
-      "imageUrl": "asdasdadsad",
-      "id": "5cf5"
+      "id": "7a90",
+      "categoryId": "a1b2",
+      "name": "123123",
+      "price": 123123,
+      "stock": 123123,
+      "imageUrl": "123123123"
+    },
+    {
+      "id": "cd38",
+      "categoryId": "a1b2",
+      "name": "adss",
+      "price": 123,
+      "stock": 123,
+      "imageUrl": "asdasdas"
+    },
+    {
+      "id": "09e1",
+      "categoryId": "a1b2",
+      "name": "sadasd",
+      "price": 123123,
+      "stock": 123123,
+      "imageUrl": "21312313"
+    },
+    {
+      "id": "6386",
+      "categoryId": "a1b2",
+      "name": "123123",
+      "price": 12312,
+      "stock": 12313,
+      "imageUrl": "1231231"
+    },
+    {
+      "id": "b1f6",
+      "categoryId": "e0f8",
+      "name": "sa",
+      "price": 12,
+      "stock": 12,
+      "imageUrl": "213"
+    },
+    {
+      "id": "23c2",
+      "categoryId": "a1b2",
+      "name": "1231",
+      "price": 123,
+      "stock": 123,
+      "imageUrl": "asdasd",
+      "categoryName": "Elektroniksssssssss"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Elektroniksssssssss",
+      "id": "a1b2"
+    },
+    {
+      "id": "e0f8",
+      "name": "asdasdasdasd"
+    }
+  ],
+  "users": [
+    {
+      "id": "e0f822",
+      "firstName": "Berkan",
+      "lastName": "Durmuş",
+      "fullName": "Berkan Durmuş",
+      "userName": "be-durmus",
+      "email": "berkand180@gmail.com",
+      "password": "Cukur.3140",
+      "isAdmin": "true"
+    },
+    {
+      "id": "9edf",
+      "firstName": "Eray",
+      "lastName": "Durmuş",
+      "userName": "erdurmus",
+      "email": "eraydurmus99@gmail.com",
+      "password": "Eray1323",
+      "isAdmin": true,
+      "fullName": " "
     }
   ]
 }

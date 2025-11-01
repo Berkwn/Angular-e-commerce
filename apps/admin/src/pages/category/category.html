@@ -1,0 +1,31 @@
+<app-blank pageTitle="Kategori Yönetimi" [breadcrumbs]="[{
+    title: 'Kategoriler',
+    url: '/category',
+    icon: 'category'
+}]"></app-blank>
+
+
+
+<flexi-grid [data]="data()"
+[loading]="loading()"
+[showCaption]="true" captionTitle="Kategori Listesi"
+[showExportExcelBtn]="true"
+(onRefresh)="result.reload()"
+exportExcelFileName="Categories">
+>
+<ng-template flexiGridCaptionCommandTemplate >
+  
+<flexi-button btnColor="primary" btnIcon="add" flexiTooltip routerLink="/category/create">
+</flexi-button>
+</ng-template>
+<flexi-grid-column field="id" title="Id" filterType="number" width="100px"></flexi-grid-column>
+<flexi-grid-column field="name" title="Kategori Adı" filterType="text"></flexi-grid-column>
+
+
+ <ng-template flexiGridColumnCommandTemplate let-item>
+    <flexi-button routerLink="/category/edit/{{item.id}}" btnIcon="edit" btnColor="info" title="Düzenle">
+    </flexi-button>
+    <flexi-button (click)="deleteCategory(item.id)"  btnIcon="delete" btnColor="danger" title="Sil">
+    </flexi-button>
+ </ng-template>
+</flexi-grid>
